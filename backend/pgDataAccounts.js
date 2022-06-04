@@ -1,0 +1,10 @@
+module.exports = [{"user_id":1,"account_num":399498,"agency_num":4170,"account_balence":482.05},
+{"user_id":2,"account_num":967449,"agency_num":6606,"account_balence":3431.44},
+{"user_id":3,"account_num":304625,"agency_num":1919,"account_balence":2475.96},
+{"user_id":4,"account_num":859089,"agency_num":6017,"account_balence":9520.54},
+{"user_id":5,"account_num":870788,"agency_num":5793,"account_balence":6972.9},
+{"user_id":6,"account_num":921110,"agency_num":4998,"account_balence":3435.51},
+{"user_id":7,"account_num":855053,"agency_num":7706,"account_balence":9550.24},
+{"user_id":8,"account_num":180590,"agency_num":1099,"account_balence":7760.66},
+{"user_id":9,"account_num":167891,"agency_num":1448,"account_balence":2480.05},
+{"user_id":10,"account_num":894224,"agency_num":3045,"account_balence":7786.21}]
