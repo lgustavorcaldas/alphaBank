@@ -1,0 +1,10 @@
+module.exports = [{"accout_id":1,"card_num":2207520120802397,"due_date":"31/05/2024","security_code":694,"blocked":true},
+{"accout_id":2,"card_num":1225991738662290,"due_date":"31/03/2024","security_code":136,"blocked":false},
+{"accout_id":3,"card_num":3897463987794884,"due_date":"23/03/2023","security_code":872,"blocked":false},
+{"accout_id":4,"card_num":3408328220626861,"due_date":"15/01/2024","security_code":478,"blocked":true},
+{"accout_id":5,"card_num":5401229597412097,"due_date":"16/02/2024","security_code":196,"blocked":false},
+{"accout_id":6,"card_num":5287344258891967,"due_date":"03/06/2024","security_code":310,"blocked":true},
+{"accout_id":7,"card_num":1641321144726144,"due_date":"29/06/2024","security_code":634,"blocked":true},
+{"accout_id":8,"card_num":7672250189690857,"due_date":"27/11/2024","security_code":137,"blocked":false},
+{"accout_id":9,"card_num":7067135560324688,"due_date":"27/03/2023","security_code":130,"blocked":true},
+{"accout_id":10,"card_num":2535503330902491,"due_date":"05/02/2023","security_code":226,"blocked":true}]

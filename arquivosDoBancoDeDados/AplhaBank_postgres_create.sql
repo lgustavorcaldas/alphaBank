@@ -21,6 +21,7 @@ CREATE TABLE users (
 CREATE TABLE accounts (
 	"id" serial NOT NULL,
 	"user_id" integer NOT NULL,
+	"uuid"  varchar(40) NOT NULL UNIQUE,
 	"account_num" varchar(6) NOT NULL UNIQUE,
 	"agency_num" varchar(4) NOT NULL,
 	"account_balence" numeric(13,2) NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE cards (
 	"id" serial NOT NULL,
 	"accout_id" integer NOT NULL UNIQUE,
 	"card_num" varchar(16) NOT NULL UNIQUE,
-	"due_date" varchar(4) NOT NULL,
+	"due_date" varchar(10) NOT NULL,
 	"security_code" varchar(3) NOT NULL,
 	"blocked" BOOLEAN NOT NULL,
 	"create_at" TIMESTAMP NOT NULL,
@@ -48,7 +49,6 @@ CREATE TABLE cards (
 
 CREATE TABLE wallet (
 	"id" serial NOT NULL UNIQUE,
-	"transfer_id" integer NOT NULL,
 	"account_id" integer NOT NULL UNIQUE,
 	"balence_of_the_moment" numeric(13,2) NOT NULL,
 	"create_at" TIMESTAMP NOT NULL,
