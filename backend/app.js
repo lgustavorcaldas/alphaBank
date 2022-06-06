@@ -8,8 +8,7 @@ app.use( cors() );
 app.use( express.urlencoded( { extended: true } ) );
 app.use( express.json() );
 
-const POST_ROUTER = require( "./routers/httpReq/postRouter" );
-
-app.use( "/", POST_ROUTER );
+// const POST_ROUTER = require( "./routers/httpReq/postRouter" );
+// app.use( "/", POST_ROUTER );
 
 app.listen( port, console.log("To on na pota " + port) );
