@@ -3,8 +3,6 @@ const router = EXPRESS.Router();
 const client =  require( "../db" );
 const { uuid } = require( 'uuidv4' );
 
-client.connect( ( err ) => { if ( err ) return console.log("🚀 ~ file: createNewAccount.js ~ line 6 ~ err", err) } );
-
 router.post("/createNewAccount", async ( req, res ) => { 
     try {
         res.send("Test");
@@ -17,7 +15,7 @@ router.post("/createNewAccount", async ( req, res ) => {
             catch ( error ) {
                 console.log("🚀 ~ file: createNewAccount.js ~ line 18 ~ ARRAY.forEach ~ error", error)
             }
-        })
+        });
     } catch ( error ) {
         console.log("🚀 ~ file: createNewAccount.js ~ line 22 ~ router.post ~ error", error)
     } 
