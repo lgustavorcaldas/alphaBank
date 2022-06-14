@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../../slices/authSlice";
 import Logo from "../../images/Vector.svg";
+import axios from "axios";
 
 const Login = () => {
   const [cpf, setCpf] = useState("");
@@ -12,7 +13,7 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
-  const { loading, error } = useSelector((state) => state.auth);
+  const { loading, error } = useSelector( (state) => state.auth );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,9 +23,15 @@ const Login = () => {
       password,
     };
 
-    console.log(user);
-
-    dispatch(login(user));
+    axios.post('http://localhost:4000/login', user)
+      .then( resposta => {
+        if (resposta.data.auth) {              
+            let userID = JSON.parse(window.atob(resposta.data.token.split('.')[1])).id;
+            console.log(`ID: ${userID}`);
+        } else {
+            console.log('Login falhou!')
+        }
+    } )
   };
 
   useEffect(() => {
@@ -61,6 +68,7 @@ const Login = () => {
               </div>
 
               {!loading && <input className="login-form-btn" type="submit" value="Entrar" />}
+
               <div className="container-cadastro-form-btn">
                 <Link className="conta" to="/register">
                   <button className="cadastro-form-btn">
