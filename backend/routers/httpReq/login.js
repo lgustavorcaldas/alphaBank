@@ -3,6 +3,8 @@ const router = EXPRESS.Router();
 const client =  require( "../db" );
 const jwt = require("jsonwebtoken");
 
+require("dotenv-safe").config();
+
 const { comparePwd } = require("../hashPwd")
 
 router.post("/login", async(req, res) => {
@@ -15,7 +17,7 @@ router.post("/login", async(req, res) => {
         if ( comparePwd(password, usuario.rows[0].password) ) {
             const id = usuario.rows[0].id;
 
-            const token = jwt.sign({ id }, "process.env.SECRET");
+            const token = jwt.sign({ id }, process.env.SECRET);
 
             res.json({ auth: true, token});
         } else {
