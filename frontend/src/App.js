@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import Container from "./components/Container"
 
 export default function App() {
   const { auth, loading } = useAuth();
@@ -13,30 +14,33 @@ export default function App() {
   if (loading) {
     return <p>Carregando...</p>;
   }
+    return(
+      <Container />
 
-  return (
-    <div className="App">
-      <GlobalStyle />
-      <BrowserRouter>
-        <>
-          <Routes>
-            <Route
-              path="/"
-              element={auth ? <Home /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="login"
-              element={!auth ? <Login /> : <Navigate to="/" />}
-            />
-            <Route
-              path="register"
-              element={!auth ? <Register /> : <Navigate to="/" />}
-            />
+    )
+  // return (
+  //   <div className="App">
+  //     <GlobalStyle />
+  //     <BrowserRouter>
+  //       <>
+  //         <Routes>
+  //           <Route
+  //             path="/"
+  //             element={auth ? <Home /> : <Navigate to="/login" />}
+  //           />
+  //           <Route
+  //             path="login"
+  //             element={!auth ? <Login /> : <Navigate to="/" />}
+  //           />
+  //           <Route
+  //             path="register"
+  //             element={!auth ? <Register /> : <Navigate to="/" />}
+  //           />
             
-          </Routes>
-        </>
+  //         </Routes>
+  //       </>
         
-      </BrowserRouter>
-    </div>
-  );
+  //     </BrowserRouter>
+  //   </div>
+  // );
 }
