@@ -1,0 +1,8 @@
+.box-nav-credit {
+    margin: 3vw 0;
+    font-size: 1vw;
+   /*  border: #000000 solid 2px; */
+    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+  }

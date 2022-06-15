@@ -1,0 +1,13 @@
+.box-profile {
+    display: flex;
+    justify-content: space-between;
+    /* border: solid black 2px; */
+    margin: 2rem;
+    width: 90vw;
+    line-height: 1;
+    font-size: 0.7rem;
+  }
+  
+  .p-card {
+    color: #648381;
+  }

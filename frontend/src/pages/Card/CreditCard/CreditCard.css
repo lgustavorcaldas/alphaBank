@@ -1,0 +1,62 @@
+.box-credit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2E908A;
+    width: 45vw;
+    height: 24vw;
+  }
+  
+  .black-belt {
+    margin: 3vw 0;
+    height: 3vw;
+    width: 45vw;
+    background-color: #000000;
+  }
+  
+  .box-card {
+   
+    display: flex;
+    justify-content: space-between;
+    /* border: solid black 2px; */
+    width: 40vw;
+    color: #FFFFFF;
+    font-size: 1.6vw;
+    margin: 1vw;
+  }
+  
+  .data-card {
+    display: flex;
+    flex-direction: column;
+    /* border: solid white 2px; */
+  }
+  
+  .val-cv {
+    margin-right: 0.30vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .credit {
+    margin-bottom: 1vw;
+  }
+  
+  .due-date-cv{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo-flag {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .credit-logo {
+    width: 7vw;
+  }
+  
+  .img-flag {
+    width: 4vw;
+    margin-top: 2vw;
+  }
