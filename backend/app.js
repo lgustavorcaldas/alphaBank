@@ -9,7 +9,8 @@ app.use( express.urlencoded( { extended: true } ) );
 app.use( express.json() );
 
 const PUT_ROUTER = require( "./routers/httpReq/transaction" );
+const POST_ROUTER = require( "./routers/httpReq/createNewUser" );
 const LOGIN_ROUTER = require( "./routers/httpReq/login" );
-app.use( "/", PUT_ROUTER, LOGIN_ROUTER );
+app.use( "/", PUT_ROUTER, POST_ROUTER, LOGIN_ROUTER );
 
 app.listen( port, console.log("To on na pota " + port) );

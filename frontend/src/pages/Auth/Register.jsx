@@ -1,10 +1,10 @@
 import "./Auth.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import Message from "../../components/Message/Message";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { register, reset } from "../../slices/authSlice";
 import Logo from "../../images/Vector.svg";
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -12,30 +12,26 @@ const Register = () => {
   const [dataNascimento, setDataNascimento] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
-  const dispatch = useDispatch();
+  const history = useHistory('')
 
   const { loading, error } = useSelector((state) => state.auth);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const user = {
-      name,
-      cpf,
-      dataNascimento,
-      password,
-      confirmPassword,
+    if( password !== confirmPassword || password === "" ) return console.log("Erro senhas não coincidem");
+
+    const createNewUser = {
+      name: name,
+      cpf: cpf,
+      birth_date: dataNascimento,
+      password: password
     };
 
-    console.log(user);
+    await axios.post('http://localhost:4000/createNewUser', createNewUser)
 
-    dispatch(register(user));
+    history.push("/login")
   };
-
-  useEffect(() => {
-    dispatch(reset());
-  }, [dispatch]);
 
   return (
     <div className="container">
@@ -97,13 +93,10 @@ const Register = () => {
               ></span>
             </div>
 
-            {!loading && (
-              <Link className="conta" to="/login">
-                <input type="submit" value="Cadastrar" />
-              </Link>
-            )}
+            <input type="submit" value="Cadastrar"/>
+
             {loading && <input type="submit" disabled value="Aguarde..." />}
-            {error && <Message msg={error} type="error" />}
+            { error && <Message msg={error} type="error" /> }
           </form>
           <p className="conta">
             Já tem conta?{" "}
