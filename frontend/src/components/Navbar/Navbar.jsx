@@ -7,27 +7,14 @@ import {
 } from "react-icons/bs";
 
 import { useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { logout, reset } from "../../slices/authSlice";
-
-import { NavbarStyled } from "Navbar"
+import { NavbarStyled }  from "./styled.js"
 
 const Navbar = () => {
-  const { auth } = useAuth();
-
-  const navigate = useNavigate();
-
-  const dispatch = useDispatch();
-
   const [query, setQuery] = useState("");
 
   const handleLogout = () => {
-    dispatch(logout());
-    dispatch(reset());
+    localStorage.clear();
 
-    navigate("/login");
   };
 
   return (
@@ -36,36 +23,19 @@ const Navbar = () => {
         <Link to="/">
           <h2>Alpha Bank</h2>
         </Link>
-        
         <ul id="nav-links">
-          {auth ? (
             <>
               <li>
                 <NavLink to="/">
                   <BsHouseDoorFill />
                 </NavLink>
               </li>
-              
               <li>
-                <NavLink to="/profile">
-                  <BsFillPersonFill />
-                </NavLink>
-              </li>
-              <li>
-                <span onClick={handleLogout}>Sair</span>
+                <Link to="/login">
+                  <span onClick={handleLogout}>Sair</span>
+                </Link>
               </li>
             </>
-          ) : (
-            <>
-              {" "}
-              <li>
-                <NavLink to="/login">Entrar</NavLink>
-              </li>
-              <li>
-                <NavLink to="/register">Cadastrar</NavLink>
-              </li>
-            </>
-          )}
         </ul>
       </nav>
     </NavbarStyled>

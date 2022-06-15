@@ -1,24 +1,29 @@
-const EXPRESS = require( "express" );
-const router = EXPRESS.Router();
-const client =  require( "../db" );
-const { uuid } = require( 'uuidv4' );
+// const EXPRESS = require( "express" );
+// const router = EXPRESS.Router();
+// const client =  require( "../db" );
+// const { uuid } = require( 'uuidv4' );
 
-router.post("/createNewAccount", async ( req, res ) => { 
-    try {
-        res.send("Test");
-        ARRAY.forEach( async ( element ) => {
-            try {
-                await client.query(
-                `insert into accounts ( accout_id, uuid, card_num, due_date, security_code, blocked, create_at, update_at ) values ( $1, $2, $3, $4, $5, $6, CURRENT_TIMESTAMP(0), CURRENT_TIMESTAMP(0) );`
-                , [ element.accout_id, uuid(), element.card_num, element.due_date, element.security_code, element.blocked]);
-            }
-            catch ( error ) {
-                console.log("🚀 ~ file: createNewAccount.js ~ line 18 ~ ARRAY.forEach ~ error", error)
-            }
-        });
-    } catch ( error ) {
-        console.log("🚀 ~ file: createNewAccount.js ~ line 22 ~ router.post ~ error", error)
-    } 
-}) 
+// router.post("/createNewAccount", async ( req, res ) => { 
+//     console.log("🚀 ~ file: createNewAccount.js ~ line 7 ~ router.post ~ res", req.body)
+//     try {
+//         const { user_id } = req.body;
+//         const account_num = Math.random() * (999999 - 100000) + 100000;
+//         const agency_num = 9999;
+//         const account_balence = 0;
+//         const uuidNum = uuid();
 
-module.exports = router;
+//         res.send("Test");
+//         try {
+//             await client.query(
+//             `insert into accounts ( user_id, account_num, agency_num, account_balence, uuid, create_at, update_at ) values ( $1, $2, $3, $4, $5, CURRENT_TIMESTAMP(0), CURRENT_TIMESTAMP(0) );`
+//             , [ user_id, account_num, agency_num, account_balence, uuidNum]);
+//         }
+//         catch ( error ) {
+//             console.log("🚀 ~ file: createNewAccount.js ~ line 18 ~ ARRAY.forEach ~ error", error)
+//         }
+//     } catch ( error ) {
+//         console.log("🚀 ~ file: createNewAccount.js ~ line 22 ~ router.post ~ error", error)
+//     } 
+// }) 
+
+// module.exports = router;
