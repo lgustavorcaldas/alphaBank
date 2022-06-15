@@ -4,6 +4,7 @@ import ElementHead from "./ElementHead";
 import SaldoExtrato from "./SaldoExtrato";
 import Btn from "./Btn";
 import Banner from "../images/emprestimo.png"
+import axios from "axios";
 const Caixa = styled.div`
     width = 816px;
     background-color:#f5f2f0;
@@ -17,6 +18,7 @@ const Imagem = styled.img`
 
 `
 function Container () {
+
     return (
         <Caixa>
             <ElementHead NomeCliente="Luiz Lindo Caldas"/>
