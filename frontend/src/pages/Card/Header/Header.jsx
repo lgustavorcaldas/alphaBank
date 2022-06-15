@@ -1,6 +1,6 @@
 import './Header.css';
-import logo from '../../images/logo.png';
-import iconProfile from '../../images/user.png';
+import logo from '../../../images/logo.png';
+import iconProfile from '../../../images/user.png';
 
 
 const Header = () => {

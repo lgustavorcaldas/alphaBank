@@ -1,8 +1,8 @@
 import './CreditBtn.css';
 import Icon from '../Icon/Icon'
-import invoice from '../../images/invoice.png'
-import lock from '../../images/lock.png';
-import historic from '../../images/historic.png'
+import invoice from '../../../images/invoice.png'
+import lock from '../../../images/lock.png';
+import historic from '../../../images/historic.png'
 
 const CreditBtn = () => {
   return (

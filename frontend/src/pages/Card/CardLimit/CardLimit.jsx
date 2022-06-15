@@ -1,7 +1,7 @@
 import React from 'react'
 import './CardLimit.css';
 //import { useState } from 'react'
-import eyesOpen from '../../images/eyer.png'
+import eyesOpen from '../../../images/eyer.png'
 
 const CardLimit = () => {
   const eyes = true
