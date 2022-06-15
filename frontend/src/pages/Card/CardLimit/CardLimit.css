@@ -1,0 +1,29 @@
+.box-card-limit {
+    background-color: #ffffff;
+    padding: 2rem;
+    border: solid #575761 2px;
+    margin-bottom: 2rem;
+  }
+  
+  .limit-eyes {
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .used-available {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+  }
+  
+  .used {
+    background-color: #648381;
+    height: 1.2rem;
+  }
+  
+  .available {
+    background-color: #E4FDE1;
+    height: 1.2rem;
+  }

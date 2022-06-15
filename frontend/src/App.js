@@ -2,6 +2,10 @@ import { GlobalStyle } from "./style/style.js";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+//<<<<<<< HEAD
+import Container from "./components/Container/Container"
+//=======
+//>>>>>>> d743aea43632c492df4b7740e909493e841939e5
 
 import StoreProvider from './components/Store/Provider'
 import RoutesPrivate from './components/Routes/Private/Private'

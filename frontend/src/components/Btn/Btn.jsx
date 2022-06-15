@@ -1,36 +1,15 @@
 import React from "react";
-import styled from "styled-components"
-import deposito2 from "../images/deposito2.png"
-import pix2 from "../images/pix2.png"
-import transf2 from "../images/transf2.png"
-import card2 from "../images/card2.png"
 
-const Caixa = styled.section`
-width:816px;
-display: flex;
-justify-content: space-between;
-`
-const DivBtn = styled.div`
-width:100px;
-height:100px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color:#ffffff;
-color:#575761;
-margin-top: 15px;
-border-radius:8px;
-border: solid 1px #575761;
+import deposito2 from "../../images/deposito2.png"
+import pix2 from "../../images/pix2.png"
+import transf2 from "../../images/transf2.png"
+import card2 from "../../images/card2.png"
 
-`
-const Item = styled.img`
-width: 45px;
-height: 45px;
-`
-const Texto = styled.span`
-font-size:14px;
-`
+import  Caixa from "./style/Caixa"
+import  DivBtn from "./style/DivBtn"
+import  Item from "./style/Item"
+import  Texto from "./style/Texto"
+
 function Btn() {
     return(
         <>
