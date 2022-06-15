@@ -4,7 +4,6 @@ import StoredContext from '../../Store/Context'
 
 const RoutesPrivate = ( { component: Component, ...rest } ) => {
     const { token } = useContext(StoredContext);
-
     return(
         <Route {...rest} render={ () => 
                 (
