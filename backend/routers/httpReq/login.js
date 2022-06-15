@@ -16,10 +16,11 @@ router.post("/login", async(req, res) => {
 
         if ( comparePwd(password, usuario.rows[0].password) ) {
             const id = usuario.rows[0].id;
+            console.log("🚀 ~ file: login.js ~ line 19 ~ router.post ~ id", id)
 
-            const token = jwt.sign({ id }, process.env.SECRET);
+            const token = jwt.sign( { id }, process.env.SECRET);
 
-            res.json({ auth: true, token});
+            res.json( {auth: true, token} );
         } else {
             res.json("Wrong Password");
         }

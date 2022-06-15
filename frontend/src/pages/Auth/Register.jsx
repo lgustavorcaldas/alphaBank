@@ -71,10 +71,7 @@ const Register = () => {
                 onChange={(e) => setDataNascimento(e.target.value)}
                 value={dataNascimento}
               />
-              <span
-                className="focus-input"
-                data-placeholder=""
-              ></span>
+              <span className="focus-input" data-placeholder=""></span>
             </div>
 
             <div className="wrap-input">
@@ -100,17 +97,19 @@ const Register = () => {
               ></span>
             </div>
 
-            {
-              !loading && 
+            {!loading && (
               <Link className="conta" to="/login">
                 <input type="submit" value="Cadastrar" />
               </Link>
-            }
+            )}
             {loading && <input type="submit" disabled value="Aguarde..." />}
             {error && <Message msg={error} type="error" />}
           </form>
           <p className="conta">
-            Já tem conta? <Link className="conta" to="/login">Clique aqui</Link>
+            Já tem conta?{" "}
+            <Link className="conta" to="/login">
+              Clique aqui
+            </Link>
           </p>
         </div>
       </div>
