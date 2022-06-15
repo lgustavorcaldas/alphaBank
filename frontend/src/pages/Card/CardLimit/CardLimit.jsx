@@ -11,17 +11,17 @@ const CardLimit = () => {
 
   //const [widthUsed, setwidthUsed ] = useState(`{ }`);
   const widthUsed = {
-    width : `${(1 - limitUsed/limitTotal)*100}vw` 
+    width: `${(1 - limitUsed / limitTotal) * 100}vw`
   }
   const widthAvailable = {
-    width : `${(limitUsed/limitTotal)*100}vw` 
+    width: `${(limitUsed / limitTotal) * 100}vw`
   }
-  
+
   return (
     <div className='box-card-limit'>
       <div className='limit-eyes'>
-      <h2>Limite do cartão.</h2>
-      {(eyes === true)?<img src={eyesOpen} alt="Olhos abertos" />: <img src={eyesOpen} alt="Olhos fechados" />}
+        <h2>Limite do cartão.</h2>
+        {(eyes === true) ? <img src={eyesOpen} alt="Olhos abertos" /> : <img src={eyesOpen} alt="Olhos fechados" />}
       </div>
 
 
@@ -37,10 +37,10 @@ const CardLimit = () => {
 
 
       <div className='used-available'>
-          <div className='used' style={widthUsed}></div>
-          <div className='available' style={widthAvailable}></div>
+        <div className='used' style={widthUsed}></div>
+        <div className='available' style={widthAvailable}></div>
       </div>
-     
+
     </div>
   )
 }

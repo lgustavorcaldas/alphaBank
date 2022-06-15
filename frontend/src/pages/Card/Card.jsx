@@ -7,13 +7,12 @@ import CreditBtn from './CreditBtn/CreditBtn';
 const Card = () => {
   return (
     <>
-     <div className='root-card'>
-   <Header/>
-   <CardLimit/>
-   <CreditCard/>
-   <CreditBtn/>
-   </div>
-    
+      <div className='root-card'>
+        <Header />
+        <CardLimit />
+        <CreditCard />
+        <CreditBtn />
+      </div>
     </>
   )
 }

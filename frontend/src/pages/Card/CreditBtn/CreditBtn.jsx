@@ -7,9 +7,9 @@ import historic from '../../images/historic.png'
 const CreditBtn = () => {
   return (
     <div className='box-nav-credit'>
-        <Icon icon ={lock} contents = {"Bloquear Cartão" }/>
-        <Icon icon ={historic} contents = {"Histórico de Compras" }/>
-        <Icon icon ={invoice} contents = {"Fatura" }/>
+      <Icon icon={lock} contents={"Bloquear Cartão"} />
+      <Icon icon={historic} contents={"Histórico de Compras"} />
+      <Icon icon={invoice} contents={"Fatura"} />
     </div>
   )
 }
