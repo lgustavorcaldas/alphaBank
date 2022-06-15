@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
-import Container from "./components/Container"
+import Container from "./components/Container/Container"
 
 export default function App() {
   const { auth, loading } = useAuth();
