@@ -2,12 +2,26 @@
     display: flex;
     justify-content: space-between;
     /* border: solid black 2px; */
-    margin: 2rem;
-    width: 90vw;
+    margin: 1.2vw;
+    width: 45vw;
     line-height: 1;
-    font-size: 0.7rem;
+    font-size: 0.7wv;
+  }
+
+  .img-logo {
+    width: 4vw;
+    padding-right: 5vw ;
+  }
+
+  .img-user {
+    width: 4vw;
   }
   
-  .p-card {
+  .p-hello {
     color: #648381;
+    font-size: 1vw;
+  }
+
+  .h-name {
+    font-size: 1.6vw;
   }

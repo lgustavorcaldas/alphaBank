@@ -5,9 +5,10 @@
     align-items: center;
     font-size: 1.1vw;
     background-color: #FFFFFF;
-    border: #575761 solid 1px;
+    border: #575761 solid 0.1vw;
+    border-radius: 0.2vw;
+    box-shadow: 0vw 0.3vw 0.5vw;
     padding: 0.8vw;
-  
   }
   
   .img-icon {
