@@ -1,5 +1,5 @@
 import './BtnBack.css';
-import btnBack from '../../images/btnBack.png'
+import btnBack from '../../../images/btnBack.png'
 
 const BtnBack = () => {
   return (
