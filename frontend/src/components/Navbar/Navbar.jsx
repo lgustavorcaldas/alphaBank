@@ -14,7 +14,6 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.clear();
-
   };
 
   return (
@@ -24,18 +23,11 @@ const Navbar = () => {
           <h2>Alpha Bank</h2>
         </Link>
         <ul id="nav-links">
-            <>
-              <li>
-                <NavLink to="/">
-                  <BsHouseDoorFill />
-                </NavLink>
-              </li>
               <li>
                 <Link to="/login">
                   <span onClick={handleLogout}>Sair</span>
                 </Link>
               </li>
-            </>
         </ul>
       </nav>
     </NavbarStyled>
