@@ -1,72 +1,48 @@
-import "./Navbar.css";
-import { NavLink, Link } from "react-router-dom";
-import {
-  BsSearch,
-  BsHouseDoorFill,
-  BsFillPersonFill,
-  BsFillCameraFill,
-} from "react-icons/bs";
+import styled from "styled-components"
 
-import { useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { logout, reset } from "../../slices/authSlice";
+export const NavbarStyled = styled.div`
+  #nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #648381;
+    border-bottom: 1px solid #363636;
+    padding: 0.1em 1em;
+  }
 
-const Navbar = () => {
-  const { auth } = useAuth();
+  #search-form {
+    position: relative;
+    width: 20%;
+  }
 
-  const navigate = useNavigate();
+  #search-form svg {
+    position: absolute;
+    top: 10px;
+    left: 9px;
+  }
 
-  const dispatch = useDispatch();
+  #search-form input {
+    padding-left: 2.5em;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin: 0;
+  }
 
-  const [query, setQuery] = useState("");
+  #nav-links {
+    display: flex;
+    align-items: center;
+  }
 
-  const handleLogout = () => {
-    dispatch(logout());
-    dispatch(reset());
+  #nav-links li {
+    margin-right: 1em;
+  }
 
-    navigate("/login");
-  };
+  #nav-links span {
+    cursor: pointer;
+  }
 
-  return (
-    <nav id="nav">
-      <Link to="/">
-        <h2>Alpha Bank</h2>
-      </Link>
-      
-      <ul id="nav-links">
-        {auth ? (
-          <>
-            <li>
-              <NavLink to="/">
-                <BsHouseDoorFill />
-              </NavLink>
-            </li>
-            
-            <li>
-              <NavLink to="/profile">
-                <BsFillPersonFill />
-              </NavLink>
-            </li>
-            <li>
-              <span onClick={handleLogout}>Sair</span>
-            </li>
-          </>
-        ) : (
-          <>
-            {" "}
-            <li>
-              <NavLink to="/login">Entrar</NavLink>
-            </li>
-            <li>
-              <NavLink to="/register">Cadastrar</NavLink>
-            </li>
-          </>
-        )}
-      </ul>
-    </nav>
-  );
-};
-
-export default Navbar;
+  #nav-links svg {
+    font-size: 1.5em;
+  }
+`

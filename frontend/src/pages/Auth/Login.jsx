@@ -1,43 +1,45 @@
-import "./Auth.css";
-import { Link } from "react-router-dom";
-import Message from "../../components/Message/Message";
-import { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { login, reset } from "../../slices/authSlice";
-import Logo from "../../images/Vector.svg";
+import { Link, useHistory } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
+
+import "./Auth.css";
+import Message from "../../components/Message/Message";
+import Logo from "../../images/Vector.svg";
+import StoreContext from "../../components/Store/Context"
 
 const Login = () => {
   const [cpf, setCpf] = useState("");
   const [password, setPassword] = useState("");
-
-  const dispatch = useDispatch();
+  const { setToken } = useContext(StoreContext);
+  const history = useHistory();
 
   const { loading, error } = useSelector( (state) => state.auth );
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async ( e ) => {
     e.preventDefault();
 
-    const user = {
+    const userLoginApi = {
       cpf,
       password,
     };
 
-    axios.post('http://localhost:4000/login', user)
-      .then( resposta => {
-        if (resposta.data.auth) {              
-            let userID = JSON.parse(window.atob(resposta.data.token.split('.')[1])).id;
-            console.log(`ID: ${userID}`);
-        } else {
-            console.log('Login falhou!')
-        }
-    } )
+    const { token } = await axios.post('http://localhost:4000/login', userLoginApi)
+    .then( async ( resposta ) => {
+      if (resposta.data.auth) {              
+        let userID = await JSON.parse(window.atob(resposta.data.token.split('.')[1])).id;
+        return { token: userID }
+      } else {
+        console.log('Login falhou!')
+      }
+    })
+
+    if(token){
+      setToken(token);
+      return history.push('/');
+    }    
   };
-
-  useEffect(() => {
-    dispatch(reset());
-  }, [dispatch]);
-
+  
   return (
     <>
       <div className="container">
@@ -47,7 +49,6 @@ const Login = () => {
               <span className="logo">
                 <img src={Logo} alt="Logo" />
               </span>
-
               <div className="wrap-input">
                 <input
                   className={cpf !== "" ? "has-val input" : "input"}
@@ -66,9 +67,7 @@ const Login = () => {
                 />
                 <span className="focus-input" data-placeholder="Senha"></span>
               </div>
-
               {!loading && <input className="login-form-btn" type="submit" value="Entrar" />}
-
               <div className="container-cadastro-form-btn">
                 <Link className="conta" to="/register">
                   <button className="cadastro-form-btn">
@@ -76,7 +75,6 @@ const Login = () => {
                   </button>        
                 </Link>
               </div>
-
             <div className="text-center">
               <a className="txt" href="#">
               Esqueceu a Senha?
@@ -86,7 +84,6 @@ const Login = () => {
               {error && <Message msg={error} type="error" />}
             </form>
           </div>
-
           <p>
             Não tem uma conta? <Link to="/register">Clique aqui</Link>
           </p>
