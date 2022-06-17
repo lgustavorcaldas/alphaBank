@@ -20,8 +20,8 @@ export default function App() {
           <Switch>
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
-              <RoutesPrivate path="/" component={Container} />
               <RoutesPrivate path="/card" component={Card} />
+              <RoutesPrivate path="/" component={Container} />
           </Switch>
       </StoreProvider>
     </BrowserRouter>

@@ -6,6 +6,7 @@ import Banner from "../../images/emprestimo.png"
 import Caixa from "./style/Caixa";
 import Imagem from "./style/Imagem";
 import axios from "axios"
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Container () {
@@ -20,11 +21,11 @@ function Container () {
             }
         })
             .then( response => {
+            console.log("🚀 ~ file: Container.jsx ~ line 24 ~ test ~ response", response)
                 setName( response.data.name )
                 setSaldo( response.data.account_balence )
             })
     }
-
     test()
 
     return (
@@ -32,7 +33,9 @@ function Container () {
             <ElementHead NomeCliente={name}/>
             <SaldoExtrato valor={saldo}/>
             <Imagem src= {Banner} />
-            <Btn />
+            <Link to="/card">
+                <Btn/>
+            </Link>
         </Caixa>
     )
 }

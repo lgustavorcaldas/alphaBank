@@ -1,17 +1,37 @@
 import './CreditCard.css';
-import logo from '../../images/logoCard.png';
-import flag from '../../images/flag.png'
+import logo from '../../../images/logoCard.png';
+import flag from '../../../images/flag.png';
 
-const creditCard = () => {
-    const name = "GABRIELA L O MOREIRA";
-    const numCard = "1111222233334444"
-    let numCredit = ""
-    const DueDate = "12/28"
-    const codCv = "123"
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from 'axios';
 
+const CreditCard = () => {
+    const [ name, setName ] = useState('GABRIELA L O MOREIRA');
+    const [ numCard, setNumCard ] = useState('1111222233334444');
+    const [ dueDate, setDueDate ] = useState('12/28');
+    const [ codCv, setCodCv ] = useState('123');
+    
+    let numCredit = '';
     for (let i=0 ;i < 16; i=i+4) {
-        numCredit += numCard.substr(i,4) + " "
+        numCredit += numCard.substr( i, 4 ) + " ";
     }
+
+    function test (){
+        const id_user = JSON.parse( localStorage.getItem("token") );
+        axios.get('http://localhost:4000/search', {
+            params: {
+                id_user 
+            }
+        })
+            .then( response => {
+                setName( response.data.name )
+                setNumCard( response.data.card_num )
+                setDueDate( response.data.due_date )
+                setCodCv( response.data.security_code )
+            })
+    }
+    test();
 
   return (
     <div className='box-credit-card'>
@@ -21,7 +41,7 @@ const creditCard = () => {
                 <p className='credit'>{name}</p>
                 <p className='credit'>{numCredit}</p>
                 <span className='val-cv'><p>VAL THRU</p> <p>CV</p></span>
-                <span className='due-date-cv'> <p>{DueDate}</p> <p>{codCv}</p></span>
+                <span className='due-date-cv'> <p>{dueDate}</p> <p>{codCv}</p></span>
             </div>
     
             <div className='logo-flag'>
@@ -34,4 +54,4 @@ const creditCard = () => {
   )
 }
 
-export default creditCard
+export default CreditCard

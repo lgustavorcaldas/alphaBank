@@ -29,7 +29,7 @@ const Register = () => {
     };
 
     await axios.post('http://localhost:4000/createNewUser', createNewUser)
-
+    console.log("Chegou");
     history.push("/login")
   };
 
