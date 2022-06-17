@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import deposito2 from "../../images/deposito2.png"
 import pix2 from "../../images/pix2.png"
@@ -15,22 +16,28 @@ function Btn() {
         <>
             <Caixa>  
                 <a href="">
-                <DivBtn>
-                    <Item src={deposito2} alt="deposito" />
-                    <Texto>Depositar</Texto>
-                </DivBtn>
+                    <Link to="/transactionArea">
+                        <DivBtn>
+                            <Item src={deposito2} alt="deposito" />
+                            <Texto>Depositar</Texto>
+                        </DivBtn>
+                    </Link>
                 </a>
                 <a href="">
-                <DivBtn>
-                    <Item src={transf2} alt="transferir" />
-                    <Texto>Transferir</Texto>
-                </DivBtn>
+                    <Link to="/transactionArea">
+                        <DivBtn>
+                            <Item src={transf2} alt="transferir" />
+                            <Texto>Transferir</Texto>
+                        </DivBtn>
+                    </Link>
                 </a>
                 <a href="">
-                <DivBtn>
-                    <Item src={pix2} alt="pix" />
-                    <Texto>Pix</Texto>
-                </DivBtn>
+                    <Link to="/transactionArea">
+                        <DivBtn>
+                            <Item src={pix2} alt="pix" />
+                            <Texto>Pix</Texto>
+                        </DivBtn>
+                    </Link>
                 </a>
                 <a href="">
                 <DivBtn>

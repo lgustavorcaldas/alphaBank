@@ -33,9 +33,7 @@ function Container () {
             <ElementHead NomeCliente={name}/>
             <SaldoExtrato valor={saldo}/>
             <Imagem src= {Banner} />
-            <Link to="/card">
-                <Btn/>
-            </Link>
+            <Btn/>
         </Caixa>
     )
 }
