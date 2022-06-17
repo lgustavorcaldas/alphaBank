@@ -8,7 +8,7 @@ import StoreProvider from './components/Store/Provider'
 import RoutesPrivate from './components/Routes/Private/Private'
 import Navbar from "./components/Navbar/Navbar";
 
-// import TransactionArea from "./pages/Transaction/TransactionArea.jsx";
+import TransactionArea from "./pages/Transaction/TransactionArea.jsx";
 
 export default function App() {
   return (
@@ -18,6 +18,7 @@ export default function App() {
       <StoreProvider>
           <Navbar />
           <Switch>
+              <Route path="/transactionArea" component={TransactionArea} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <RoutesPrivate path="/card" component={Card} />
