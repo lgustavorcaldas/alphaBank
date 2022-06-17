@@ -12,25 +12,26 @@ const Register = () => {
   const [dataNascimento, setDataNascimento] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const history = useHistory('')
+  const history = useHistory("");
 
   const { loading, error } = useSelector((state) => state.auth);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if( password !== confirmPassword || password === "" ) return console.log("Erro senhas não coincidem");
+    if (password !== confirmPassword || password === "")
+      return console.log("Erro senhas não coincidem");
 
     const createNewUser = {
       name: name,
       cpf: cpf,
       birth_date: dataNascimento,
-      password: password
+      password: password,
     };
 
-    await axios.post('http://localhost:4000/createNewUser', createNewUser)
+    await axios.post("http://localhost:4000/createNewUser", createNewUser);
     console.log("Chegou");
-    history.push("/login")
+    history.push("/login");
   };
 
   return (
@@ -93,10 +94,10 @@ const Register = () => {
               ></span>
             </div>
 
-            <input type="submit" value="Cadastrar"/>
+            <button type="submit" className="cadastro-form-btn">Cadastrar</button>
 
             {loading && <input type="submit" disabled value="Aguarde..." />}
-            { error && <Message msg={error} type="error" /> }
+            {error && <Message msg={error} type="error" />}
           </form>
           <p className="conta">
             Já tem conta?{" "}

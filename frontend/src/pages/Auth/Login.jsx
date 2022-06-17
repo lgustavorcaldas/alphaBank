@@ -76,17 +76,15 @@ const Login = () => {
                 </Link>
               </div>
             <div className="text-center">
-              <a className="txt" href="#">
-              Esqueceu a Senha?
-              </a>
+              <p>
+                Não tem uma conta? <Link to="/register">Clique aqui</Link>
+              </p>
             </div>
               {loading && <input type="submit" disabled value="Aguarde..." />}
               {error && <Message msg={error} type="error" />}
             </form>
           </div>
-          <p>
-            Não tem uma conta? <Link to="/register">Clique aqui</Link>
-          </p>
+          
         </div>
       </div>
     </>

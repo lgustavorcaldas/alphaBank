@@ -261,6 +261,7 @@
 
 .login-form-btn {
   font-size: 15px;
+  margin-bottom: 15px;
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -310,6 +311,7 @@
 }
 
 .conta {
+  margin-top: 15px;
   color: #648381;
   text-align: center;
 }
