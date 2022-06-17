@@ -1,0 +1,12 @@
+.box-back {
+    display: flex;
+    width: 60vw;
+}
+
+.btn-back {
+    display: flex;
+    width: 4vw;
+    align-self: flex-start;
+    justify-content: flex-start;
+    pointer-events:none
+}

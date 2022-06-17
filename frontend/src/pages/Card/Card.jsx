@@ -12,7 +12,7 @@ import axios from 'axios';
 const Card = () => {
   const [ nameTop, setNameTop ] = useState('Jorge');
 
-  function test (){
+  function fetchInfoBack (){
     const id_user = JSON.parse( localStorage.getItem("token") );
     axios.get('http://localhost:4000/search', {
       params: {
@@ -23,7 +23,7 @@ const Card = () => {
           setNameTop( response.data.name )
       })
   }
-  test();
+  fetchInfoBack();
 
   return (
     <div className='root-card'>

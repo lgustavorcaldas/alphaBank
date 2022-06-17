@@ -4,7 +4,7 @@ import {createGlobalStyle} from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     *{
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
         list-style: 0;
         font-size: 16px;
