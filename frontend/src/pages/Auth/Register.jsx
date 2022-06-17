@@ -28,9 +28,8 @@ const Register = () => {
       password: password
     };
 
-    await axios.post('http://localhost:4000/createNewUser', createNewUser)
-    console.log("Chegou");
-    history.push("/login")
+    await axios.post('http://localhost:4000/createNewUser', createNewUser);
+    history.push("/login");
   };
 
   return (
