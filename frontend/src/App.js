@@ -18,9 +18,9 @@ export default function App() {
       <StoreProvider>
           <Navbar />
           <Switch>
-              <Route path="/transactionArea" component={TransactionArea} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
+              <RoutesPrivate path="/transactionArea" component={TransactionArea} />
               <RoutesPrivate path="/card" component={Card} />
               <RoutesPrivate path="/" component={Container} />
           </Switch>

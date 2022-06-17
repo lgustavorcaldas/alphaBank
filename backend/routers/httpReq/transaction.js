@@ -26,6 +26,7 @@ router.put("/transation", async ( req, res ) => {
         const { account_num_sender } = req.body;
         const { account_num_reciver } = req.body;
         const { value_send } = req.body;
+        console.log("🚀 ~ file: transaction.js ~ line 29 ~ router.put ~ req.body", req.body)
         
         executeTransaction( async ( client ) => {
         // Dados dos clientes (Sender e Reciver)
@@ -36,6 +37,7 @@ router.put("/transation", async ( req, res ) => {
                 WHERE "account_num" = ($1)`
                 , [ account_num_sender ] );
             const rows_sender  = rows[0];
+            console.log("🚀 ~ file: transaction.js ~ line 40 ~ executeTransaction ~ rows_sender", rows_sender)
             // Reciver
             rows  = await client.query(`
                 SELECT "id", "account_balence" 
@@ -43,6 +45,7 @@ router.put("/transation", async ( req, res ) => {
                 WHERE "account_num" = ($1)`
                 , [ account_num_reciver ] );
             const rows_reciver  = rows.rows[0];
+            console.log("🚀 ~ file: transaction.js ~ line 47 ~ executeTransaction ~ rows_reciver", rows_reciver)
         //
             // Teste para ver se o "Sender" tem o valor transferido
             if ( rows_sender.account_balence >= value_send ) {
@@ -67,8 +70,8 @@ router.put("/transation", async ( req, res ) => {
             } else {
                 console.log("Pobre");
             }
+            res.json( `${ value_send } was send to ${ account_num_reciver } by ${ account_num_sender }` );
         }); 
-        res.json( `${ value_send } was send to ${ account_num_reciver } by ${ account_num_sender }` );
     } catch ( error ) {
         res.json( error );
         console.log("🚀 ~ file: transaction.js ~ line 74 ~ router.put ~ error", error);
